@@ -1,42 +1,13 @@
-# Nuxt 3 Minimal Starter
+# pdf-ajaib front-end
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+https://joshste.github.io/pdf-ajaib-fe/
 
-## Setup
+Install node yang LTS https://nodejs.org/en/
 
-Make sure to install the dependencies:
+To install this project dependencies do:
+```npm install``` 
 
-```bash
-# yarn
-yarn install
+To start do:
+```npm run dev```
 
-# npm
-npm install
-
-# pnpm
-pnpm install --shamefully-hoist
-```
-
-## Development Server
-
-Start the development server on http://localhost:3000
-
-```bash
-npm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Kalo di push ke main, akan langsung di deploy ke website secara otomatis.
