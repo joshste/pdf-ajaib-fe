@@ -23,9 +23,9 @@ jobs:
       - name: Build and generate nuxt
         run: |
               npm ci
-              npm run build
               npm run generate
-              cd dist
+              cd .output/public
+              echo '.nuxt' > .nojekyll
               git config --global user.email "githubaction"
               git config --global user.name "github action"
               git init
