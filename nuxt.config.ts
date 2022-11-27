@@ -5,5 +5,8 @@ export default defineNuxtConfig({
     ],
     typescript: {
         shim: false
+    },
+    app: {
+        baseURL: "/pdf-ajaib-fe/"
     }
 })
