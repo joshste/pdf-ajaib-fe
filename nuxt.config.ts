@@ -8,5 +8,12 @@ export default defineNuxtConfig({
     },
     app: {
         baseURL: "/pdf-ajaib-fe/"
+    },
+
+    runtimeConfig: {
+        public: {
+            BASE_URL: process.env.NODE_ENV==="production"?"https://pdf-ajaib.fly.dev/":
+            "http://localhost:8080/"
+        }
     }
 })
