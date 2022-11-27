@@ -31,4 +31,4 @@ jobs:
               git init
               git add -A
               git commit -m 'Deploy'
-              git push -f https://joshste:${{ secrets.GITHUB_TOKEN }}@github.com/joshste/pdf-ajaib-fe.git main:gh-pages
+              git push -f https://joshste:${{ secrets.GITHUB_TOKEN }}@github.com/joshste/pdf-ajaib-fe.git master:gh-pages
