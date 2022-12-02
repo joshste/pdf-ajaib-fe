@@ -1,5 +1,5 @@
 <template>
-    <UploadButton @fileChanged="updateFile" />
+    <UploadPDFButton @pdfChanged="updateFile" />
     <input type="number" name="reorder" v-model="indexA" @input="onInputChange" />
     <input type="number" name="reorder" v-model="indexB" @input="onInputChange" />
     <button @click="onSubmit">Submit</button>

@@ -11,9 +11,9 @@ export default {
         onFileChange(e) {
             const file = e.target.files[0];
             if (file.type != "application/pdf") {
-                file = None;
+                file = null;
             }
-            this.$emit('fileChanged', file);
+            this.$emit('pdfChanged', file);
         }
     }
 }
