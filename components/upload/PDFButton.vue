@@ -1,8 +1,7 @@
 <template>
-    <div>
-        <label for="upload">Upload a PDF</label>
-        <input type="file" name="upload" @change="onFileChange" accept="application/pdf" />
-    </div>
+    <label for="upload">Upload a PDF</label>
+    <input type="file" name="upload" @change="onFileChange" accept="application/pdf" class="text-ellipsis max-w-sm" />
+
 </template>
 
 <script setup lang="ts">
