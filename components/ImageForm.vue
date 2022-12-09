@@ -12,7 +12,16 @@
 </template>
 
 <script setup lang="ts">
-const readyInput = ref(false);
+
+const props = defineProps<{
+    filePdf: (File | undefined)
+}>();
+
+const emit = defineEmits<{
+    (e: 'update:filePdf', filePdf: File | undefined): void
+}>();
+
+let readyInput = false;
 const posY = ref();
 const posX = ref();
 const pageidx = ref();
@@ -24,34 +33,42 @@ let fileImage: File | undefined;
 
 const updateFile = (pdf: File | undefined) => {
     downloaded.value = false;
-    if (pdf) filePdf = pdf;
+    emit("update:filePdf", pdf);
+    console.log("update")
 }
 
 const updateImage = (image: File | undefined) => {
     downloaded.value = false;
     if (image) fileImage = image;
+    
 }
 
 const onInputChange = () => {
     downloaded.value = false;
-    readyInput.value = (posX.value !== "" && posY.value !== "") ? true : false;
+    readyInput = (posX.value !== "" && posY.value !== "") ? true : false;
+
+    console.log("change")
 }
 
-const onSubmit = async () => {
-    if (!filePdf || !readyInput.value || !fileImage) return;
+const onSubmit = computed(() => {
+    return async () => {
+        console.log("tes submit")
+        if (!props.filePdf || !readyInput || !fileImage) return;
 
-    const formData = new FormData();
-    formData.append("position", `${posX.value},${posY.value}`)
-    formData.append("page-idx", pageidx.value)
-    formData.append("pdf-file", filePdf);
-    formData.append("image-file", fileImage);
-    const response = await customFetch<Blob>("add-image", {
-        method: "post",
-        body: formData
-    });
+        const formData = new FormData();
+        formData.append("position", `${posX.value},${posY.value}`)
+        formData.append("page-idx", pageidx.value)
+        formData.append("pdf-file", props.filePdf);
+        formData.append("image-file", fileImage);
+        const response = await customFetch<Blob>("add-image", {
+            method: "post",
+            body: formData
+        });
 
-    pdfUrl.value = window.URL.createObjectURL(response);
-    downloaded.value = true;
-}
+        pdfUrl.value = window.URL.createObjectURL(response);
+        downloaded.value = true;
+}});   
+
+
 </script>
 
