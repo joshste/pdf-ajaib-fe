@@ -1,6 +1,9 @@
 <template>
   <div>
-      <div>
+      <Navbar />
+  </div>
+  <div>
+      <div class="container flex flex-wrap items-center justify-between mx-auto">
           <ImageForm v-model:filePdf="filePdf" />
           <EmbedPDFView :pdfBlob="blob" />
       </div>
