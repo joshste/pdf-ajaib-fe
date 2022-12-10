@@ -1,7 +1,10 @@
 <template>
+    <Navbar />
     <div class="flex max-w-[100vw]">
         <ReorderForm v-model:file="file" />
-        <EmbedPDFView :pdfBlob="blob" />
+        <div class="bg-[#2a2a2e] font-extralight font-mono text-white">
+            <EmbedPDFView :pdfBlob="blob" />
+        </div>
     </div>
 </template>
 
