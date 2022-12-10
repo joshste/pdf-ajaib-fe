@@ -9,7 +9,9 @@ export default defineNuxtConfig({
     app: {
         baseURL: "/pdf-ajaib-fe/"
     },
-
+    tailwindcss: {
+        cssPath: "./tailwind.css"
+    },
     runtimeConfig: {
         public: {
             BASE_URL: process.env.NODE_ENV==="production"?"https://pdf-ajaib.fly.dev/":
