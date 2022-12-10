@@ -1,10 +1,10 @@
 <template>
-    <Navbar />
+    <div>
+        <Navbar />
+    </div>
     <div class="flex max-w-[100vw]">
-        <ReorderForm v-model:file="file" />
-        <div class="bg-[#2a2a2e] font-extralight font-mono text-white">
-            <EmbedPDFView :pdfBlob="blob" />
-        </div>
+        <RemoveForm v-model:file="file" />
+        <EmbedPDFView :pdfBlob="blob" />
     </div>
 </template>
 
@@ -17,10 +17,5 @@ let blob = computed(() => {
     return new Blob([file.value], { type: "application/pdf" });
 
 })
-
-watch(file, (file) => {
-    console.log(`watched: ${file}`);
-})
-
 </script>
   

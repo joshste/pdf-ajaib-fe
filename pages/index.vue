@@ -1,8 +1,11 @@
 <template>
     <div>
+        <div>
+          <Navbar />
+        </div>
         <div class="h-screen flex justify-center items-center">
-            <NuxtLink to="/reorder">Reorder PDF</NuxtLink>
+          <Logo />
         </div>
     </div>
 </template>
-  
+   

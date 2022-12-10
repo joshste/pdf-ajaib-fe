@@ -1,8 +1,10 @@
 <template>
-    <Navbar />
-    <div class="flex max-w-[100vw]">
-        <ReorderForm v-model:file="file" />
-        <div class="bg-[#2a2a2e] font-extralight font-mono text-white">
+    <div>
+      <Navbar />
+    </div>
+    <div>
+        <div class="container flex flex-wrap items-center justify-between mx-auto">
+            <TextForm v-model:file="file" />
             <EmbedPDFView :pdfBlob="blob" />
         </div>
     </div>
