@@ -1,4 +1,7 @@
 <template>
+    <div>
+        <Navbar />
+    </div>
     <div class="flex max-w-[100vw]">
         <RemoveForm v-model:file="file" />
         <EmbedPDFView :pdfBlob="blob" />
